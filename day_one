@@ -48,7 +48,7 @@ class HomeActivity extends StatelessWidget {
           onPressed: () {
             // menu works function
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.mobile_friendly,
             size: 30,
             color: Colors.white,
@@ -59,19 +59,21 @@ class HomeActivity extends StatelessWidget {
             onPressed: () {
               // function
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.people),
+            icon: const Icon(Icons.people),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),
-      body: Center(child: Text('Body !!!!')),
+      body: const Center(
+          child: Text('Body !!!!')
+      ),
     );
   }
 }
