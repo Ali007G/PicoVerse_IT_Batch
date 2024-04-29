@@ -1,4 +1,4 @@
-# PicoVerse_IT_Batch
+# PicoVerse IT, Batch - 01
 
 Day- 01: Scaffold, Appbar, Leading, Action. => (class - 05) <p>
 Day- 02: discussion- package, widget, Drawer(half part covered), floatingActionButton. => (class - 06) <p>
