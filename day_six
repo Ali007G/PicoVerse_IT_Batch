@@ -1,0 +1,155 @@
+// 1. material, scaffold, appbar, leading, action button
+// 2. discussion- package, widget, floating action btn, body- Container, Sized box, drawer
+// 3. Column, Row, endDrawer, Snackbar message, alert dialog
+// 6. single child scroll, expand, snack message, alert diaglog, circular progress, linear progress.
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BatchOne(),
+    );
+  }
+}
+
+class BatchOne extends StatelessWidget {
+  const BatchOne({super.key});
+
+  MySnackBar(message,context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message))
+    );
+  }
+
+  MyAlertDialog(context) {
+    return showDialog(context: context, builder: (BuildContext context){
+      return Expanded(child: AlertDialog(
+        title: Text('Welcome'),
+        content: Text('Do You Want To Take Appoinment'),
+        actions: [
+          TextButton(onPressed: () {
+            MySnackBar('Successfull', context);
+            Navigator.of(context).pop();
+          }, child: Text('Yes'),),
+          TextButton(onPressed: () {}, child: Text('No'),),
+        ],
+      ));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //backgroundColor: Colors.indigo,
+      // appbar, drawer
+      appBar: AppBar(
+        title: const Text('Day-06',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+        ),
+        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
+        // cicle avatar
+       actions: [
+        const CircleAvatar(
+          backgroundImage: AssetImage('assets/images/shanto.jpg'),
+        ),
+
+        IconButton(onPressed: () {},
+            icon: Icon(Icons.search))
+      ],
+      ),
+      // floating acction button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          //MySnackBar('Successful', context);
+          MyAlertDialog(context);
+
+        },
+        child: Icon(Icons.camera_alt),
+        hoverColor: Colors.amber,
+      ),
+
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                height: 100,
+                width: 300,
+                color: Colors.black26,
+                child: Text('Container 1'),
+              ),
+              SizedBox(height: 15,),
+              Container(
+                height: 100,
+                width: 300,
+               color: Colors.green,
+                child: Text('COntainer 2'),
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(15),
+                //   color: Colors.green,
+                // ),
+              ),
+              // Expanded(
+              //   flex: 1,
+              //     child: Container(
+              //   color: Colors.yellow,
+              // )),
+              // Text Button. Elevated Button, Outlined Button
+              SizedBox(height: 24,),
+              TextButton(onPressed: () {
+                MySnackBar('You Click Text Button', context);
+              }, child: Text('This is TextButton')),
+              SizedBox(height: 15,),
+              ElevatedButton(onPressed: () {
+                MySnackBar('You Click Elevated Button', context);
+               },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  //onPrimary: Colors.indigo,
+                ),
+                child: Text('This is Elevated Button',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 15,),
+              OutlinedButton(onPressed: () {
+                MySnackBar('You Click Outline Button', context);
+              }, child: Text('Outlined Button'),),
+
+              SizedBox(height: 24,),
+
+             CircularProgressIndicator(
+               color: Colors.redAccent,
+               strokeWidth: 10,
+             ),
+
+              SizedBox(height: 24,),
+
+              LinearProgressIndicator(
+                color: Colors.green,
+                minHeight: 10,
+                backgroundColor: Colors.redAccent,
+              ),
+            ],
+          ),
+        ),
+      ),
+
+    );
+  }
+}
