@@ -6,7 +6,7 @@ Day- 02: discussion- package, widget, Drawer(half part covered), floatingActionB
 Day- 03: Drawer(all cover), ListView, ListTile, Container, SizedBox => (class - 07) <p>
 Day- 04: Container, Column, Row, endDrawer => (class - 08) <p>
 Day- 05: SingleChildScrollView, ElevatedButton, TextButton, Navigator, Network Image, Asset Image (class - 09) <p>
-Day- 06: Buttom Navigation Bar, Button, Alert Dialog, Messenger <p>
+Day- 06: Buttom Navigation Bar, Button, Alert Dialog, Messenger, <p>
 Day- 07: ListView Builder, Simple form, Card, Circular Progress <p>
 Day- 08: <p>
 Day- 09: <p>
