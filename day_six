@@ -64,7 +64,7 @@ class BatchOne extends StatelessWidget {
         const CircleAvatar(
           backgroundImage: AssetImage('assets/images/shanto.jpg'),
         ),
-
+        SizedBox(width: 12,),
         IconButton(onPressed: () {},
             icon: Icon(Icons.search))
       ],
@@ -84,6 +84,7 @@ class BatchOne extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
+              const Padding(padding: EdgeInsets.all(10)),
               Container(
                 height: 100,
                 width: 300,
@@ -95,7 +96,7 @@ class BatchOne extends StatelessWidget {
                 height: 100,
                 width: 300,
                color: Colors.green,
-                child: Text('COntainer 2'),
+                child: Text('Container 2'),
                 // decoration: BoxDecoration(
                 //   borderRadius: BorderRadius.circular(15),
                 //   color: Colors.green,
@@ -129,12 +130,13 @@ class BatchOne extends StatelessWidget {
               SizedBox(height: 15,),
               OutlinedButton(onPressed: () {
                 MySnackBar('You Click Outline Button', context);
-              }, child: Text('Outlined Button'),),
+              }, child: Text('This is Outlined Button'),),
 
               SizedBox(height: 24,),
 
              CircularProgressIndicator(
                color: Colors.redAccent,
+               backgroundColor: Colors.blueAccent,
                strokeWidth: 10,
              ),
 
