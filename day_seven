@@ -1,0 +1,175 @@
+// 1. material, scaffold, appbar, leading, action button
+// 2. discussion- package, widget, floating action btn, body- Container, Sized box, drawer
+// 3. Column, Row, endDrawer, Snackbar message, alert dialog
+// 6. single child scroll, snack message, alert diaglog, circular progress, linear progress.
+// 7. bottom navigation bar, form, expand
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BatchOne(),
+    );
+  }
+}
+
+class BatchOne extends StatefulWidget {
+  const BatchOne({super.key});
+
+  @override
+  State<BatchOne> createState() => _BatchOneState();
+}
+
+class _BatchOneState extends State<BatchOne> {
+
+ int _selectedIndex = 0;
+ void _navigateBottomBar (int index) {
+   setState(() {
+     _selectedIndex = index;
+   });
+ }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //backgroundColor: Colors.indigo,
+      // appbar, drawer
+      appBar: AppBar(
+        title: const Text('Day-07 Flutter',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+        ),
+        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
+
+        // cicle avatar
+       actions: [
+        const CircleAvatar(
+          backgroundImage: AssetImage('assets/images/nim.jpg'),
+        ),
+         const SizedBox(width: 12,),
+        IconButton(onPressed: () {},
+            icon: const Icon(Icons.search))
+      ],
+      ),
+      // floating acction button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.camera_alt),
+        hoverColor: Colors.amber,
+      ),
+
+      // bottom navigation bar
+
+      bottomNavigationBar: BottomNavigationBar(
+        //type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
+       //showSelectedLabels: false,
+        showUnselectedLabels: false,
+       unselectedItemColor: Colors.black,
+       // selectedItemColor: Colors.red,
+       backgroundColor: Colors.amber,
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
+
+        //currentIndex: 2,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            backgroundColor: Colors.blueAccent
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message,
+               // color: Colors.amber,
+              ),
+              label: 'Message',
+            backgroundColor: Colors.redAccent
+          ),
+
+          BottomNavigationBarItem(
+              icon: Icon(Icons.call),
+              label: 'Call',
+          backgroundColor: Colors.green
+          ),
+        // BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
+        ],
+      ),
+
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'First Name',
+                hintText: 'Your Name Here'
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Last Name',
+                  hintText: 'Your Name Here'
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Mail',
+                  hintText: 'Your Mail Here'
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                //  border: OutlineInputBorder(),
+                 labelText: 'Message',
+                 hintText: 'Write a message',
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+                backgroundColor: Colors.amber,
+              ),
+                child: const Text('Submit',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),
+                ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
