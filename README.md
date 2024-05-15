@@ -7,7 +7,7 @@ Day- 03: Drawer(all cover), ListView, ListTile, Container, SizedBox => (class - 
 Day- 04: Container, Column, Row, endDrawer => (class - 08) <p>
 Day- 05: SingleChildScrollView, ElevatedButton, TextButton, Navigator, Network Image, Asset Image. => (class - 09) <p>
 Day- 06: SingleChildScrollView, All Button, Alert Dialog, SnackBar Message, Circular and Linear Progress Indicator => (class - 10) <p> 
-Day- 07: Buttom Navigation Bar, ListView Builder, Simple form, Card, Circular Progress <p>
-Day- 08: <p>
+Day- 07: Buttom Navigation Bar, Simple form <p> 
+Day- 08: ListView Builder, Gridview, Card, Stack, Tab Bar <p> 
 Day- 09: <p>
 Day- 10: <p>
